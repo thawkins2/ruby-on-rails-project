@@ -70,6 +70,12 @@ La Liga(Spanish league - ID=436)
 FootballData.fetch(:soccerseasons, :leagueTable, id: id)
 Gets the league table based on what ID is passed in.
 -----
+Sample request with caching. League_id was used to create each unique request, so one did not override the other. 
+-----
+Rails.cache.fetch("api_request/#{id}", expires_in: 12.hours) do
+	FootballData.fetch(:soccerseasons, :leagueTable, id: id)
+end
+-----
 Request returns parsed json, so all you need to do is decide how you want to output the data. Go to http://api.football-data.org/index for the API documentation and gem examples.Json structure and request documentation will provide all you need for structuring your requests.
 
 All API request methods were done in the api requests helper and included in the application so any controller has access to use. Goal on each controller staying skinny and only calling the methods they need in a helper and passing the correct data.
@@ -84,4 +90,3 @@ If the test suite passes, you'll be ready to run the app in a local server:
 ```
 $ rails server
 ```
-
