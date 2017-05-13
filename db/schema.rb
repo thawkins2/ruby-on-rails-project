@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170513013943) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "bets", force: :cascade do |t|
     t.string   "match"
     t.float    "home_win"
@@ -39,7 +42,7 @@ ActiveRecord::Schema.define(version: 20170513013943) do
     t.datetime "updated_at",     null: false
     t.float    "bet_odds"
     t.string   "bet_match"
-    t.index ["user_id", "created_at"], name: "index_user_bets_on_user_id_and_created_at"
+    t.index ["user_id", "created_at"], name: "index_user_bets_on_user_id_and_created_at", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,7 +57,7 @@ ActiveRecord::Schema.define(version: 20170513013943) do
     t.string   "activation_digest"
     t.boolean  "activated",         default: false
     t.datetime "activated_at"
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
 end

@@ -1,4 +1,5 @@
 class BetsController < ApplicationController
+  before_action :logged_in?, :index
   before_action :set_bet, only: [:show, :edit, :update, :destroy]
 
   # GET /bets

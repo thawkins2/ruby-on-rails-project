@@ -15,7 +15,6 @@ gem 'faraday'
 gem 'rspec', '~> 3.5'
 
 group :development, :test do
-  gem 'sqlite3', '1.3.12'
   gem 'byebug',  '9.0.0', platform: :mri
   gem 'rspec-rails'
 end
@@ -34,7 +33,7 @@ group :test do
   gem 'guard-minitest',           '2.4.4'
 end
 
-group :production do
+group :development, :test, :production do
   gem 'pg', '0.18.4'
 end
 

@@ -7,9 +7,10 @@ Update gem file with gems needed:
 gem 'bcrypt',       '3.1.11'
 gem 'football__data'
 gem 'bootstrap-sass', '3.3.6'
-gem 'faraday'
 gem 'rspec', '~> 3.0'
-gem install json
+
+Change development/test:
+gem 'sqlite3', '1.3.12' => 'pg', '0.18.4'
 
 ```
 $ bundle install --without production
