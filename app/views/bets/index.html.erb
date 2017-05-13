@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bets</h1>
+<% if logged_in? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Match</th>
+        <th>Home Win</th>
+        <th>Draw</th>
+        <th>Away Win</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @bets.each do |bet| %>
+        <tr>
+          <td><%= bet.match %></td>
+          <td><%= bet.home_win %></td>
+          <td><%= bet.draw %></td>
+          <td><%= bet.away_win %></td>
+          <td><%= link_to 'Place Bet', user_bet_path(:bet => @bets) %></td>
+          <% if current_user.admin? %>
+            <td> | <%= link_to 'Show', bet %></td>
+            <td> | <%= link_to 'Edit', edit_bet_path(bet) %></td>
+            <td> | <%= link_to 'Destroy', bet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div>
+    <h2>You must be logged in to see or bet.</h2>
+  </div>
+<% end %>
+<br>

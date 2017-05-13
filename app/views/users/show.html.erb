@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Profile</h1>
+	<div>
+		Name: <%= @user.name %>
+		<br>
+		Email: <%= @user.email %>
+	</div>
+
+	<div>
+		<h3>Your Bets</h3>
+		<table>
+			<tr>
+				<th>Bet Id</th>
+				<th>Your Selection</th>
+				<th>Amount</th>
+			</tr>
+			<% @user_bets.each do |bet| %>
+				<tr>
+					<td><%= bet.id %></td>
+					<td><%= bet.user_selection %></td>
+					<td><%= bet.amount_bet %></td>
+					</tr>
+			<% end %>
+		</table>
+	</div>
+</body>
+</html>

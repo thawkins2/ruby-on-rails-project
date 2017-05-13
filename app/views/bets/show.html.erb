@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Match:</strong>
+  <%= @bet.match %>
+</p>
+
+<p>
+  <strong>Odds win:</strong>
+  <%= @bet.home_win %>
+</p>
+
+<p>
+  <strong>Odds draw:</strong>
+  <%= @bet.draw %>
+</p>
+
+<p>
+  <strong>Odds lose:</strong>
+  <%= @bet.away_win %>
+</p>
+
+<%= link_to 'Edit', edit_bet_path(@bet) %> |
+<%= link_to 'Back', bets_path %>

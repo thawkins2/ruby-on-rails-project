@@ -1,0 +1,21 @@
+<div id="current_fixtures">
+	<h1>Current Week Fixures</h1>
+	<% @games["fixtures"].each do |game| %>
+		<div>
+			<% if game["status"] == "FINISHED" %>
+				<p><%= game["homeTeamName"] %> <%= game["result"].values[0] %> - <%= game["result"].values[1] %> <%= game["awayTeamName"] %> - <%= link_to 'Discussion', '#' %></p>
+			<% else %>
+				<p><%= game["homeTeamName"] %> v <%= game["awayTeamName"] %> - <%= link_to 'Discussion', '#' %> | <%= link_to 'Bet', '#' %></p>
+			<% end %>
+		</div>
+	<% end %>
+</div>
+
+<div id="next_fixtures">
+	<h1>Next Matchday Fixures</h1>
+	<% @next_games["fixtures"].each do |next_game| %>
+		<div>
+			<p><%= next_game["homeTeamName"] %> v <%= next_game["awayTeamName"] %> - <%= link_to 'Discussion', '#' %> | <%= link_to 'Bet', '#' %></p>
+		</div>
+	<% end %>
+</div>
