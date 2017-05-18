@@ -1,9 +1,7 @@
 # Ruby on Rails Project by Tj Hawkins
 
 ## Description
-Goal of project was to get a better understanding of the MVC architecture, Rails in
-general, and using APIs. Project uses an API to get soccer scores and league tables.
-A faux user betting system is nearly set up. Just need to decide how I want to connect my bets with a user bet. There is also room for a discussion for each game possible, but that is something extra for later on. 
+Development was done in an Ubuntu environment I created myself. Bitbucket was used as my CMS and Heroku was used to deploy the application. Goal of project was to get a better understanding of the MVC architecture, Rails in general, and using APIs. Project uses an API to get soccer scores and league tables. A faux user betting system is nearly set up. Just need to decide how I want to connect my bets with a user bet. There is also room for a discussion for each game possible, but that is something extra for later on. 
 
 
 ## Getting started
